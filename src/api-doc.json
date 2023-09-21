@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "API Title",
+    "version": "1.0"
+  },
+  "servers": [{ "url": "https://localhost:8080" }],
+  "components": {
+    "schemas": {
+        "Player": {
+            "type": "object",
+            "properties": {
+                "property": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+  },
+  "paths": {
+    "/api/players": {
+      "get": {
+        "description": "Returns a list of all players",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items":{
+                      
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
