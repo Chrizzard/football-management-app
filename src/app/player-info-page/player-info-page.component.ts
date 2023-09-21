@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';
+import { ActivatedRoute } from '@angular/router';
+import { PlayerServiceService } from './player-service.service';
+import { Player } from '../shared/player';
 
 @Component({
   selector: 'app-player-info-page',
@@ -8,19 +10,20 @@ import { PostService } from '../services/post.service';
 })
 export class PlayerInfoPageComponent implements OnInit{
 
-  // posts:any;
-  newData:any;
+  player: Player | undefined
   
-  constructor(private service:PostService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private service:PlayerServiceService
+  ) {}
   
   ngOnInit() {
-      // this.service.getPosts()
-      //   .subscribe(response => {
-      //     this.posts = response;
-      //   });
-      this.service.getData().subscribe(response =>{
-        this.newData=response;
-      })
+    this.getPlayer();
+  }
+
+  getPlayer(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.service.getPlayerById(id).subscribe((player) => this.player = player);
   }
 
 }
