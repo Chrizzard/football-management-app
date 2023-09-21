@@ -1,2 +1,7 @@
-<app-nav-bar></app-nav-bar>
-<app-matches-side-bar></app-matches-side-bar>
+<div class="app-container">
+  <app-nav-bar></app-nav-bar>
+  <div class="main-container">
+    <router-outlet class="content"></router-outlet>
+    <app-matches-side-bar></app-matches-side-bar>
+  </div>
+</div>
