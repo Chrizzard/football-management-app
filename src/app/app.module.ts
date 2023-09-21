@@ -9,6 +9,7 @@ import { LogoComponent } from './logo/logo.component';
 import { MatchesSideBarElementComponent } from './matches-side-bar/matches-side-bar-element/matches-side-bar-element.component';
 import { TeamInfoPageComponent } from './team-info-page/team-info-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TeamInfoPageModule } from './team-info-page/team-info-page.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TeamInfoPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

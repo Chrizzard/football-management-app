@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Team } from '../shared/team';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Team } from '../shared/team';
 export class TeamServiceService {
   constructor(private http: HttpClient) {}
 
-  getHeroById(id: number) {
-    return this.http.get<Team>('localhost:8080/teams/' + id);
+  getTeamById(id: number): Observable<Team> {
+    return this.http.get<Team>('http://localhost:8080/teams/' + id);
   }
 }
