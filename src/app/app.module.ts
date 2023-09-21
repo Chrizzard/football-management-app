@@ -8,8 +8,11 @@ import { MatchesSideBarComponent } from './matches-side-bar/matches-side-bar.com
 import { LogoComponent } from './logo/logo.component';
 import { MatchesSideBarElementComponent } from './matches-side-bar/matches-side-bar-element/matches-side-bar-element.component';
 import { TeamInfoPageComponent } from './team-info-page/team-info-page.component';
-import { HttpClientModule } from '@angular/common/http';
 import { TeamInfoPageModule } from './team-info-page/team-info-page.module';
+import { PlayersComponent } from './players/players.component';
+import { PlayerCardComponent } from './players/player-card/player-card.component';
+import { PlayerInfoPageComponent } from './player-info-page/player-info-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +21,9 @@ import { TeamInfoPageModule } from './team-info-page/team-info-page.module';
     NavBarComponent,
     MatchesSideBarComponent,
     LogoComponent,
+    PlayersComponent,
+    PlayerCardComponent,
+    PlayerInfoPageComponent
     ],
   imports: [
     BrowserModule,
