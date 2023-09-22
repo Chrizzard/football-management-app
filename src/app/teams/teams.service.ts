@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class TeamServiceService {
+export class TeamsService {
   constructor(private http: HttpClient) {}
 
   getTeamById(id: number): Observable<Team> {

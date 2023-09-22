@@ -5,14 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MatchesSideBarComponent } from './matches-side-bar/matches-side-bar.component';
-import { LogoComponent } from './logo/logo.component';
+import { LogoComponent } from './shared/logo/logo.component';
 import { MatchesSideBarElementComponent } from './matches-side-bar/matches-side-bar-element/matches-side-bar-element.component';
-import { TeamInfoPageComponent } from './team-info-page/team-info-page.component';
-import { TeamInfoPageModule } from './team-info-page/team-info-page.module';
 import { PlayersComponent } from './players/players.component';
 import { PlayerCardComponent } from './players/player-card/player-card.component';
 import { PlayerInfoPageComponent } from './player-info-page/player-info-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TeamsModule } from './teams/teams.module';
 
 
 @NgModule({
@@ -23,13 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
     LogoComponent,
     PlayersComponent,
     PlayerCardComponent,
-    PlayerInfoPageComponent
+    PlayerInfoPageComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TeamInfoPageModule
+    TeamsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
