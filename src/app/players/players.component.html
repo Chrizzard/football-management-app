@@ -1,1 +1,9 @@
-<p>players works!</p>
+<h1>Players</h1>
+
+<div>
+    <app-player-card
+        *ngFor="let player of players"
+        class="list-group-item" [player]="player">
+    </app-player-card>
+</div>
+
