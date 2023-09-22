@@ -21,24 +21,42 @@
 
 .main-container {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  width: 80vw;
   height: 2000px;
-  margin-top: 40px;
-  background-color: lightgrey;
+  margin-top: 100px;
+  background-color: $Background-color;
 }
 
 .content {
-  width: 75%;
+  width: 67%;
+  height: 75vh;
+  padding: 20px 30px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  box-shadow: $Box-shadow;
 }
 
 app-matches-side-bar {
-  width: 25%;
-  background-color: antiquewhite;
+  width: 30%;
+  height: 75vh;
+  padding: 20px 30px;
+  // overflow-y: scroll;
+  background-color: $Background-color;
+  border-radius: 5px;
+  box-shadow: $Box-shadow;
+
 }
 
 app-nav-bar {
-    width: 80vw;
-    position: fixed;
-    top: 0;
-    background-color: gray;
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  position: fixed;
+  top: 20px;
+  padding: 10px 10px;
+  background-color: $Background-color;
+  box-shadow: $Box-shadow;
+  border-radius: 5px;
 }

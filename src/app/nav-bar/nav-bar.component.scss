@@ -1,3 +1,5 @@
+@import "/src/styles.scss";
+
 nav {
   display: flex;
   align-items: center;
@@ -9,10 +11,20 @@ ul {
   display: flex;
   justify-content: end;
   flex-grow: 1;
-  margin-right: 20px;
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    margin-left: 20px;
+    color: #000;
+    transition: 0.3s;
+    :hover {
+      color: $Accent-color;
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+    li {
+      font-size: large;
+    }
+  }
 }
 
-a {
-  list-style-type: none;
-  margin-left: 20px;
-}
