@@ -1,2 +1,8 @@
-<button routerLink="/teams/new">Add Team</button>
-<p *ngFor="let team of teams">{{ team.name }}</p>
+<div class="team-overview">
+  <button routerLink="/teams/new">Add Team</button>
+  <div class="cards">
+    <div *ngFor="let team of teams" class="card">
+      <h1>{{ team.name }}</h1>
+    </div>
+  </div>
+</div>
