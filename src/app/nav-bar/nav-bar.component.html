@@ -1,8 +1,8 @@
 <nav>
-  <app-logo></app-logo>
+  <a routerLink=""><app-logo></app-logo></a>
   <ul>
-    <a href="" *ngFor="let page of pages"
-      ><li>{{ page }}</li></a
+    <a [routerLink]="page.url" *ngFor="let page of pages"
+      ><li>{{ page.label }}</li></a
     >
   </ul>
 </nav>
