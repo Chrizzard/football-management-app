@@ -12,7 +12,8 @@ import { PlayerCardComponent } from './players/player-card/player-card.component
 import { PlayerInfoPageComponent } from './player-info-page/player-info-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TeamsModule } from './teams/teams.module';
-
+import { share } from 'rxjs';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TeamsModule } from './teams/teams.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TeamsModule
+    TeamsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
