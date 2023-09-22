@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NavPair } from '../shared/nav-pair';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,10 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  pages: string[] = [
-    "Home",
-    "Teams",
-    "Players",
-    "Matches"
+  pages: NavPair[] = [
+    {label: "Home", url: ""},
+    {label: "Teams", url: "/teams"},
+    {label: "Players", url: "/players"},
+    {label: "Matches", url: "/matches"}
   ];
 }

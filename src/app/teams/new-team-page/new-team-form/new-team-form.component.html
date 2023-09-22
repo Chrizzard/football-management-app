@@ -1,0 +1,31 @@
+<form (submit)="onSubmit()">
+  <label for="name"></label>
+  Name:<input
+    type="text"
+    id="name"
+    [(ngModel)]="formData.name"
+    name="name"
+    required
+  />
+
+  <label for="description">Description:</label
+  ><input
+    type="text"
+    id="description"
+    [(ngModel)]="formData.description"
+    name="description"
+    required
+  />
+
+  <label for="country">Country:</label
+  ><select id="country" [(ngModel)]="formData.country" name="country">
+    <option *ngFor="let c of enumCountry" [value]="c">{{ c }}</option>
+  </select>
+
+  <label for="league">League:</label
+  ><select id="league" [(ngModel)]="formData.league" name="league">
+    <option *ngFor="let l of enumLeague" [value]="l">{{ l }}</option>
+  </select>
+
+  <button type="submit">Submit</button>
+</form>
