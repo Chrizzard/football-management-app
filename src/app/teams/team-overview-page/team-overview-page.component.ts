@@ -12,6 +12,10 @@ export class TeamOverviewPageComponent {
 
   constructor(private service: TeamsService) {}
 
+  deleteTeam(id: number) {
+    this.service.deleteTeam(id).subscribe((r) => console.log(r));
+  }
+
   ngOnInit() {
     this.getTeams();
   }

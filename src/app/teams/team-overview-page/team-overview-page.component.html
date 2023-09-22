@@ -3,6 +3,7 @@
   <div class="cards">
     <div *ngFor="let team of teams" class="card">
       <h1>{{ team.name }}</h1>
+      <button (click)="deleteTeam(team.id)">X</button>
     </div>
   </div>
 </div>

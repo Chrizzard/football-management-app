@@ -23,10 +23,14 @@ export class TeamsService {
   }
 
   getCountries(): Observable<string[]> {
-    return this.http.get<string[]>('http://localhost:8080/enums/country')
+    return this.http.get<string[]>('http://localhost:8080/enums/country');
   }
 
   getLeagues(): Observable<string[]> {
-    return this.http.get<string[]>('http://localhost:8080/enums/league')
+    return this.http.get<string[]>('http://localhost:8080/enums/league');
+  }
+
+  deleteTeam(id: number) {
+    return this.http.delete('http://localhost:8080/teams/' + id);
   }
 }
