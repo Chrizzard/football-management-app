@@ -1,0 +1,39 @@
+<form (submit)="onSubmit()">
+  <label for="name"></label>
+  Name:<input
+    type="text"
+    id="name"
+    [(ngModel)]="formData.name"
+    name="name"
+    required
+  />
+
+  <label for="lastName">Last Name:</label
+  ><input
+    type="text"
+    id="lastName"
+    [(ngModel)]="formData.lastName"
+    name="lastName"
+    required
+  />
+
+  <label for="email">Email:</label
+  ><input
+    type="text"
+    id="email"
+    [(ngModel)]="formData.email"
+    name="email"
+    required
+  />
+
+  <label for="password">Password:</label
+  ><input
+    type="text"
+    id="password"
+    [(ngModel)]="formData.password"
+    name="password"
+    required
+  />
+
+  <button type="submit">Register</button>
+</form>

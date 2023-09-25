@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TeamsModule } from './teams/teams.module';
 import { share } from 'rxjs';
 import { SharedModule } from './shared/shared.module';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,15 @@ import { SharedModule } from './shared/shared.module';
     PlayersComponent,
     PlayerCardComponent,
     PlayerInfoPageComponent,
+    RegistrationComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     TeamsModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
