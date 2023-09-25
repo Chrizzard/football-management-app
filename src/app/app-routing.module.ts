@@ -7,6 +7,7 @@ import { NewTeamPageComponent } from './teams/new-team-page/new-team-page.compon
 import { PlayersComponent } from './players/players.component';
 import { PlayerCardComponent } from './players/player-card/player-card.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'teams', component: TeamOverviewPageComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'teams/:id', component: TeamDetailsPageComponent },
   { path: 'players/:id', component: PlayerInfoPageComponent },
   { path: 'players', component: PlayersComponent },
-  { path: 'registration', component: RegistrationComponent}
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

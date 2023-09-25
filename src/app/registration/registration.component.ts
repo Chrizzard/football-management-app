@@ -10,7 +10,6 @@ export class RegistrationComponent {
     name: '',
     lastName: '',
     email: '',
-    phonenumber: '',
     password: ''
   };
 

@@ -17,6 +17,7 @@ import { TeamsModule } from './teams/teams.module';
 import { share } from 'rxjs';
 import { SharedModule } from './shared/shared.module';
 import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegistrationComponent } from './registration/registration.component';
     PlayerCardComponent,
     PlayerInfoPageComponent,
     RegistrationComponent,
+    LoginComponent,
     ],
   imports: [
     BrowserModule,
