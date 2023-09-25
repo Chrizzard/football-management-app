@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegisterService } from './register.service';
 
 @Component({
   selector: 'app-registration',
@@ -10,10 +11,13 @@ export class RegistrationComponent {
     name: '',
     lastName: '',
     email: '',
-    password: ''
+    password: '',
   };
 
+  constructor(private service: RegisterService) {}
+
   onSubmit() {
-    console.log("user created!")
+    console.log(this.formData);
+    this.service.addUser(this.formData).subscribe((r) => console.log(r));
   }
 }

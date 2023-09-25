@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,10 @@ export class LoginComponent {
     password: '',
   };
 
+  constructor(private service: LoginService) {}
+
   onSubmit() {
-    console.log('Login successful!');
+    console.log(this.formData);
+    this.service.login(this.formData).subscribe((r) => console.log(r));
   }
 }
