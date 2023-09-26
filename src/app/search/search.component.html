@@ -1,0 +1,8 @@
+<input
+    class="searchBar"
+    type="text"
+    [(ngModel)]="currentQuery"
+    (input)="onQueryChange()"
+    placeholder="Search..."
+    (keyup.enter)="performSearch()"
+  />

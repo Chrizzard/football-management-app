@@ -1,5 +1,12 @@
 <div class="team-overview">
   <button routerLink="/teams/new">Add Team</button>
+  <input
+    class="searchBar"
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="Search..."
+    (keyup.enter)="performSearch()"
+  />
   <div class="cards">
     <div *ngFor="let team of teams" class="card">
       <a [routerLink]="'/teams/' + team.id">
