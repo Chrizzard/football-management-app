@@ -1,12 +1,22 @@
+<div class="matches-overview">
 <h1>Matches</h1>
 <div class="match-list">
-    <div *ngFor="let match of matches" class="match-item">
-      <div class="match-item-details">
-        <p class="match-item-start-time">{{ match.startTime }}</p>
-        <p class="match-item-teams">{{ match.homeTeam.name }} vs {{ match.awayTeam.name }}</p>
-      </div>
-      <div class="match-item-score">
-        <p>{{ match.homeScore }} - {{ match.awayScore }}</p>
-      </div>
+  <input
+    class="searchBar"
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="Search match"
+    (keyup.enter)="performSearch()"
+  />
+
+  <div *ngFor="let match of matches" class="match-item">
+    <div class="match-item-details">
+      <p class="match-item-start-time">{{ match.startTime }}</p>
+      <p class="match-item-teams">
+        {{ match.homeTeam.name }} vs {{ match.awayTeam.name }}
+      </p>
+      <p>{{ match.homeScore }} - {{ match.awayScore }}</p>
     </div>
   </div>
+</div>
+</div>

@@ -4,13 +4,13 @@
     align-items: center;
 }
 
-.cards {
+.match-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.card {
+.match-item-details {
     min-width: 200px;
     width: 40%;
     height: 150px;
@@ -22,12 +22,7 @@
     margin-top: 30px;
 }
 
-button {
-    width: 60%;
-    height: 40px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
+.searchBar {
+    width: 160px;
+    margin: 10px;
 }

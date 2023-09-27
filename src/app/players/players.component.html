@@ -1,4 +1,5 @@
-<h1>Players</h1>
+<div class="players-overview">
+  <h1>Players</h1>
   <input
     class="searchBar"
     type="text"
@@ -6,10 +7,12 @@
     placeholder="Search by name/team"
     (keyup.enter)="performSearch()"
   />
-<div>
+  <div class="cards">
     <app-player-card
-        *ngFor="let player of players"
-        class="list-group-item" [player]="player">
+      *ngFor="let player of players"
+      class="list-group-item"
+      [player]="player"
+    >
     </app-player-card>
+  </div>
 </div>
-
