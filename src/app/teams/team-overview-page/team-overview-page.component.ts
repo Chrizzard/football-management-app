@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Team } from 'src/app/shared/team';
 import { TeamsService } from '../teams.service';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
   selector: 'app-team-overview-page',
@@ -30,17 +31,28 @@ export class TeamOverviewPageComponent {
     });
   }
 
-  searchTeams(searchText: string): void {
-    this.service.searchTeams(searchText).subscribe((teams) => {
-      console.log(teams);
-      this.teams = teams;
-    });
+  performSearch() {
+    const searchByName$ = this.service.searchTeamsByName(this.searchText);
+    const searchByCountry$ = this.service.searchTeamsByCountry(this.searchText);
+
+    forkJoin([searchByName$, searchByCountry$])
+      .pipe(
+        map(([searchByNameResults, searchByCountryResults]) => [
+          ...searchByNameResults,
+          ...searchByCountryResults,
+        ]),
+        map((combinedResults) => this.removeDuplicates(combinedResults))
+      )
+      .subscribe((uniqueCombinedResults) => {
+        this.teams = uniqueCombinedResults;
+      });
   }
 
-  performSearch() {
-     this.service.searchTeams(this.searchText).subscribe(
-      (searchResults) => {
-        this.teams = searchResults;
-      })
+  removeDuplicates(array: any[]) {
+    const seen = new Set();
+    return array.filter((item) => {
+      const key = JSON.stringify(item);
+      return seen.has(key) ? false : seen.add(key);
+    });
   }
 }

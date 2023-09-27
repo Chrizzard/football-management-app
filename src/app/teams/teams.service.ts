@@ -34,7 +34,11 @@ export class TeamsService {
     return this.http.delete('http://localhost:8080/teams/' + id);
   }
 
-  searchTeams(name: string) {
+  searchTeamsByName(name: string) {
     return this.http.get<Team[]>('http://localhost:8080/teams?name=' + name);
+  }
+
+  searchTeamsByCountry(country: string) {
+    return this.http.get<Team[]>('http://localhost:8080/teams?country=' + country);
   }
 }

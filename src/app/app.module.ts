@@ -24,7 +24,6 @@ import { PlayerModule } from './players/players.module';
     NavBarComponent,
     MatchesSideBarComponent,
     LogoComponent,
-    // PlayersComponent,
     PlayerInfoPageComponent,
     RegistrationComponent,
     LoginComponent,

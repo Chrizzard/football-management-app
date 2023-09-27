@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Player } from '../shared/player';
 import { PlayersService } from './players.service';
+import { forkJoin } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-players',
@@ -8,30 +10,45 @@ import { PlayersService } from './players.service';
   styleUrls: ['./players.component.scss'],
 })
 export class PlayersComponent implements OnInit {
-  players: any;
-  items: any[] = [];
+  players: Player[];
+  searchText: string = '';
 
-  constructor(private service: PlayersService) {}
+  constructor(private service: PlayersService) {
+    this.players = [];
+  }
 
   ngOnInit() {
-    this.service.getPlayers().subscribe((response) => {
-      this.players = response;
-      this.items = this.players;
+    this.getPlayers();
+  }
+
+  getPlayers(): void {
+    this.service.getPlayers().subscribe((players) => {
+      this.players = players;
     });
   }
 
-  handleSearchResult(results: any[]) {
-    // Implement your logic to handle search results here
-    // For example, you can update the 'items' property with the search results
-    this.items = results;
+  performSearch() {
+    const searchByName$ = this.service.searchPlayersByName(this.searchText);
+    const searchByTeam$ = this.service.searchPlayersByTeam(this.searchText);
+
+    forkJoin([searchByName$, searchByTeam$])
+      .pipe(
+        map(([searchByNameResults, searchByTeamResults]) => [
+          ...searchByNameResults,
+          ...searchByTeamResults,
+        ]),
+        map((combinedResults) => this.removeDuplicates(combinedResults)) 
+      )
+      .subscribe((uniqueCombinedResults) => {
+        this.players = uniqueCombinedResults;
+      });
   }
 
-  // Define the handleQueryChange method
-  handleQueryChange(query: string) {
-    // Implement your logic to handle query changes here
-    // For example, you can filter the 'items' based on the query
-    this.items = this.players.filter((player: { name: string; }) =>
-      player.name.toLowerCase().includes(query.toLowerCase())
-    );
+  removeDuplicates(array: any[]) {
+    const seen = new Set();
+    return array.filter((item) => {
+      const key = JSON.stringify(item); 
+      return seen.has(key) ? false : seen.add(key);
+    });
   }
 }

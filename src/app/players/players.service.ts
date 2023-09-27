@@ -4,7 +4,7 @@ import { Player } from '../shared/player';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlayersService {
   // players$: Observable<Player[]>;
@@ -19,6 +19,18 @@ export class PlayersService {
   }
 
   getPlayers() {
-    return this.http.get('http://localhost:8080/players');
+    return this.http.get<Player[]>('http://localhost:8080/players');
+  }
+
+  searchPlayersByName(name: string) {
+    return this.http.get<Player[]>(
+      'http://localhost:8080/players?name=' + name
+    );
+  }
+
+  searchPlayersByTeam(team: string) {
+    return this.http.get<Player[]>(
+      'http://localhost:8080/players?team=' + team
+    );
   }
 }

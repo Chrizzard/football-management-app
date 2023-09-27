@@ -1,9 +1,11 @@
 <h1>Players</h1>
-<app-search
-  [searchData]="players"
-  (searchResult)="handleSearchResult($event)"
-  (queryChange)="handleQueryChange($event)"
-></app-search>
+  <input
+    class="searchBar"
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="Search by name/team"
+    (keyup.enter)="performSearch()"
+  />
 <div>
     <app-player-card
         *ngFor="let player of players"
