@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Player } from '../shared/player';
 import { PlayersService } from './players.service';
 
@@ -20,9 +20,16 @@ export class PlayersComponent implements OnInit {
     });
   }
 
-  handleSearchResult(results: any[]) {}
+  handleSearchResult(results: any[]) {
+    // Implement your logic to handle search results here
+    // For example, you can update the 'items' property with the search results
+    this.items = results;
+  }
 
+  // Define the handleQueryChange method
   handleQueryChange(query: string) {
+    // Implement your logic to handle query changes here
+    // For example, you can filter the 'items' based on the query
     this.items = this.players.filter((player: { name: string; }) =>
       player.name.toLowerCase().includes(query.toLowerCase())
     );

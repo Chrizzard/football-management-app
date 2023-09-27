@@ -33,4 +33,8 @@ export class TeamsService {
   deleteTeam(id: number) {
     return this.http.delete('http://localhost:8080/teams/' + id);
   }
+
+  searchTeams(name: string) {
+    return this.http.get<Team[]>('http://localhost:8080/teams?name=' + name);
+  }
 }

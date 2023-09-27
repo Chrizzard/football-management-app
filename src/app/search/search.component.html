@@ -1,8 +1,8 @@
-<input
-    class="searchBar"
+<div class="search-container">
+  <input
     type="text"
     [(ngModel)]="currentQuery"
-    (input)="onQueryChange()"
-    placeholder="Search..."
-    (keyup.enter)="performSearch()"
+    [placeholder]="initialQuery"
+    (keydown.enter)="performSearch()"
   />
+</div>

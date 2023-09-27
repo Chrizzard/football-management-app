@@ -11,6 +11,7 @@ export class SearchComponent {
 
   @Output() searchResult = new EventEmitter<any[]>();
   @Output() queryChange = new EventEmitter<string>();
+  @Output() enterKeyPressed = new EventEmitter<void>();
 
   currentQuery: string = '';
 
