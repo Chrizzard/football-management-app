@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { PlayerModule } from './players/players.module';
+import { MatchesComponent } from './matches/matches.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { PlayerModule } from './players/players.module';
     PlayerInfoPageComponent,
     RegistrationComponent,
     LoginComponent,
-  
+    MatchesComponent
   ],
   imports: [
     BrowserModule,
