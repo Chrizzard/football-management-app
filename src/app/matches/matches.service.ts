@@ -18,6 +18,13 @@ export class MatchesService {
     return this.http.get<Match>('http://localhost:8080/matches/' + id);
   }
 
+  getMatchByAwayName(name: string): Observable<Match[]>{
+    return this.http.get<Match[]>('http://localhost:8080/matches?awayTeam=' + name)
+  }
+  getMatchByHomeName(name: string): Observable<Match[]>{
+    return this.http.get<Match[]>('http://localhost:8080/matches?homeTeam=' + name)
+  }
+
   addMatch(requestBody: any) {
     return this.http.post('http://localhost:8080/matches', requestBody);
   }
