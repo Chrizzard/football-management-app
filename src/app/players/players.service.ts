@@ -19,18 +19,24 @@ export class PlayersService {
   }
 
   getPlayers() {
-    return this.http.get<Player[]>('http://localhost:8080/players');
+    let token = "Bearer " + localStorage.getItem('token');
+    let headers = {Authorization: token};
+    return this.http.get<Player[]>('http://localhost:8080/players', {headers:headers});
   }
 
   searchPlayersByName(name: string) {
+    let token = "Bearer " + localStorage.getItem('token');
+    let headers = {Authorization: token};
     return this.http.get<Player[]>(
-      'http://localhost:8080/players?name=' + name
+      'http://localhost:8080/players?name=' + name, {headers:headers}
     );
   }
 
   searchPlayersByTeam(team: string) {
+    let token = "Bearer " + localStorage.getItem('token');
+    let headers = {Authorization: token};
     return this.http.get<Player[]>(
-      'http://localhost:8080/players?team=' + team
+      'http://localhost:8080/players?team=' + team, {headers:headers}
     );
   }
 }

@@ -4,5 +4,6 @@
     <a [routerLink]="page.url" *ngFor="let page of pages"
       ><li>{{ page.label }}</li></a
     >
+    <a routerLink="/login" (click)="logout()"><li>Logout</li></a>
   </ul>
 </nav>

@@ -16,6 +16,6 @@ export class LoginComponent {
 
   onSubmit() {
     console.log(this.formData);
-    this.service.login(this.formData).subscribe((r) => console.log(r));
+    this.service.login(this.formData).subscribe((r) => localStorage.setItem("token", r.token));
   }
 }

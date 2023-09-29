@@ -14,4 +14,5 @@ export interface Player {
 	shirtNumber: number,
     city: string,
     country: string
+    profile_picture: string
 }

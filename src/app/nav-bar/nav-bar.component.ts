@@ -22,4 +22,8 @@ export class NavBarComponent {
       page.label.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }
+
+  logout() {
+    localStorage.removeItem("token");
+  }
 }
