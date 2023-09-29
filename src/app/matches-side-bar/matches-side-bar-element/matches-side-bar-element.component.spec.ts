@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MatchesSideBarElementComponent } from './matches-side-bar-element.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('MatchesSideBarElementComponent', () => {
   let component: MatchesSideBarElementComponent;
@@ -8,7 +10,8 @@ describe('MatchesSideBarElementComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MatchesSideBarElementComponent]
+      declarations: [MatchesSideBarElementComponent],
+      imports: [HttpClientModule]
     });
     fixture = TestBed.createComponent(MatchesSideBarElementComponent);
     component = fixture.componentInstance;
